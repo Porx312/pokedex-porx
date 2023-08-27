@@ -222,8 +222,7 @@ carddescriptor.classList.add("active")
                     pokemonThumbnail.addEventListener("click", (e) => {
                        displayPokemonInfo(data)
                        window.scrollTo({
-                        top: 0,
-                        behavior: "smooth" // Hace que el scroll sea suave
+                        top: 0// Hace que el scroll sea suave
                       });
                     });
                 });
