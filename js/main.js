@@ -132,7 +132,7 @@ document.addEventListener("DOMContentLoaded", () => {
         root.style.setProperty('--color-text-rank', color.color2);
         root.style.setProperty('--color-fond', color.color3); 
         console.log(color[1]);
-        document.body.style.background = "linear-gradient(to top, #1f1c2c, var(--color-card))"
+        document.body.style.background = "linear-gradient(to top, #1f1c2c, var(--color-fond))"
         const pokemonInfo = `
             <div class="card-container">
                 <div class="container-decription-pokemon">
@@ -198,38 +198,34 @@ document.addEventListener("DOMContentLoaded", () => {
         
         pokedexDiv.innerHTML = pokemonInfo;
         const carddescriptor = document.querySelector(".container-decription-pokemon")
-setTimeout(()=>{
+ setTimeout(()=>{
 carddescriptor.classList.add("active")
-},1600)
+},1600) 
        
     }
-
     function fetchMultiplePokemonData() {
+        const pokedexDiv = document.getElementById("pokedex"); // Asegúrate de obtener la referencia correcta al contenedor de pokedex
+    
         for (let i = 1; i <= 50; i++) {
             fetch(`https://pokeapi.co/api/v2/pokemon/${i}`)
                 .then(response => response.json())
                 .then(data => {
-                    displayPokemonThumbnail(data);
+                    const pokemonThumbnail = document.createElement("div");
+                    pokemonThumbnail.classList.add("pokemon-thumbnail");
+                    pokemonThumbnail.innerHTML = `
+                        <img src="${data.sprites.other.dream_world.front_default}" alt="${data.name}">
+                    `;
+                    pokemonThumbnail.setAttribute("id", data.id);
+                    pokedexDiv.appendChild(pokemonThumbnail);
+    
+                    // Agregar el evento de clic a la miniatura de Pokémon
+                    pokemonThumbnail.addEventListener("click", (e) => {
+                       displayPokemonInfo(data)
+                    });
                 });
         }
     }
-
-    function displayPokemonThumbnail(data) {
-        const pokemonThumbnail = document.createElement("div");
-        pokemonThumbnail.classList.add("pokemon-thumbnail");
-        pokemonThumbnail.innerHTML = `
-            <img src="${data.sprites.other.dream_world.front_default}" alt="${data.name}">
-         
-
-        `;
     
-        const pokedexDiv = document.getElementById("pokedex"); // Asegúrate de obtener la referencia correcta al contenedor de pokedex
-        pokedexDiv.appendChild(pokemonThumbnail);
-    
-      
-    }
-    
-
     function getRarity(type) {
         const rarities = {
             normal: "Epic",
@@ -256,4 +252,5 @@ carddescriptor.classList.add("active")
     }
 
     fetchMultiplePokemonData();
+ 
 });
