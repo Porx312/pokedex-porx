@@ -3,11 +3,15 @@ document.addEventListener("DOMContentLoaded", () => {
     const pokemonNameInput = document.getElementById("pokemonName");
     const pokedexDiv = document.getElementById("pokedex");
 
-
     searchButton.addEventListener("click", () => {
         const pokemonName = pokemonNameInput.value.trim().toLowerCase();
-        if (pokemonName !== "") {
-            fetchPokemonData(pokemonName);
+        fetchPokemonData(pokemonName);
+    });
+    
+    pokemonNameInput.addEventListener("keydown", (e) => {
+        if (e.keyCode === 13) {
+            e.preventDefault(); // Evitar que se envíe el formulario si estás dentro de uno
+            searchButton.click(); // Simular un clic en el botón de búsqueda
         }
     });
 
@@ -222,7 +226,7 @@ carddescriptor.classList.add("active")
                     pokemonThumbnail.addEventListener("click", (e) => {
                        displayPokemonInfo(data)
                        window.scrollTo({
-                        top: 0// Hace que el scroll sea suave
+                        top: 0 // Hace que el scroll sea suave
                       });
                     });
                 });
