@@ -1,0 +1,259 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,500;0,700;0,900;1,700&display=swap');
+*{
+box-sizing: border-box;
+margin: 0;
+padding: 0;
+}
+:root{
+--color-card:#5e5e5e;
+--color-text-rank:#5c5b5b;
+--color-fond:#222222;
+}
+body{
+  background: linear-gradient(to top, #1f1c2c, var(--color-card))
+  }
+.card-container{ 
+ 
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  gap: 2rem;
+  padding: 1rem;
+  transform: scale(.8);
+  font-family: 'Roboto', sans-serif;
+}
+.card {
+  width: 380px;
+  height: 600px;
+  border-radius:0px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transform-style: preserve-3d;
+  transition: transform .8s ease-in-out;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: pokerotate 2s ease-in-out forwards; 
+  background-color: var(--color-card); 
+  border-radius: 10px;
+}
+
+.card-face {
+ 
+  border-radius: 15px;
+  border:var(--color-text-rank) solid 5px;
+  width: 380px;
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  font-size: 24px;
+  backface-visibility: hidden;
+  padding: 0 .5rem;
+  color: white;
+}
+.nameandrasnk{
+display: flex;
+justify-content: space-between;
+}
+.name-pokemon{
+font-size: 1.8rem;
+display: flex;
+justify-content: center;
+align-items: center;
+gap: 0 .2rem;
+letter-spacing: .1rem;
+}
+.name-types{
+font-size: .7rem;
+color: var(--color-card);
+}
+.pokeRank{
+display: flex;
+align-items: center;
+gap: 0 .3rem;
+
+height: 40px;
+}
+.pokeRank-title{
+  align-self: start;
+font-size: .7rem;
+display: flex;
+flex-direction: column;
+align-items: flex-end;
+color: var(--color-text-rank);
+}
+.pokeRank-num{
+font-size: 3.2rem;
+font-weight: 000;
+font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.imagenPokemon{
+  position: relative;
+  margin-top: 1rem;
+  border: 3px solid var(--color-text-rank);
+  background-color: var( --color-fond);
+  width: 350px;
+  height: 350px;
+  clip-path: polygon(6% 32%, 6% 0, 41% 0, 58% 0, 95% 0, 100% 0, 100% 0, 100% 100%, 0 100%, 0 59%, 2% 56%, 2% 36%);
+  z-index: 20;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.imagenPokemon-img{
+max-width: 100%;
+}
+.type{
+background-color: rgb(58, 6, 65);
+width: 25px;
+height: 130px;
+position: absolute;
+top: 56px;
+left: 14px;
+border: 3px solid black;
+z-index: 10;
+padding: 1rem;
+writing-mode: vertical-rl;
+}
+.type-text{
+  margin-top: 60px;
+  font-size: .9rem;
+}
+.description--pokemon{
+  margin-top: .5rem;
+  font-size: .8rem;
+  line-height: .8rem;
+  font-family: monospace;
+  text-align: start;
+}
+/* habilities */
+.habilities{
+display: flex;
+gap: 0 .5rem;
+margin-top: .2rem;
+}
+.habilities-item{
+width: 200px;
+padding: .2rem;
+background: #ff0084; /* fallback for old browsers */
+background: -webkit-linear-gradient(to top, #ff0084, #33001b); /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to top, #ff0084, #33001b);
+border: 1px solid purple;
+}
+.habilities-text{
+font-size: .7rem;
+color: #f721da;
+}
+.habilities-text-stats{
+font-size: .5rem;
+}
+.rarity h2{
+font-size: 1rem;
+}
+.rarity h4{
+  font-size: .6rem;
+}
+.revervedDere{
+display: flex;
+margin-top: 1rem;
+align-items: center;
+justify-content: space-between;
+}
+.revervedDere p{
+font-size: .7rem;
+
+color: #f721da;
+}
+.revervedDere .barra{
+  width: 140px;
+  border-radius: 10px;
+  height: 5px;
+  background-color:#3f0537;
+  background: #bc4e9c; /* fallback for old browsers */
+  background: -webkit-linear-gradient(to left, #bc4e9c, #f80759); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to left, #bc4e9c, #f80759); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+}
+.revervedDere .logo{
+font-size: .9rem;
+font-family: Verdana, Geneva, Tahoma, sans-serif;
+font-weight: 700;
+color: #656565;
+}
+.front {
+  background-color: #070007;
+}
+.back {
+  background-color: #252524;
+  transform: rotateY(180deg);
+}
+
+
+/* DESdcription card */
+.container-decription-pokemon{
+  
+  display: flex;
+  opacity: 0;
+flex-direction: column;
+width: 380px;
+gap: .2rem 0;
+transition: .5s ease-in-out;
+transform: translateX(300px);
+align-items: flex-end;
+padding-block: 5rem;
+color: #ffffff;
+}
+ .container-decription-pokemon.active{
+opacity: 1;
+transform: translateX(0);
+} 
+.description--pokemon-name{
+font-size: 4rem;
+
+}
+.description--pokemon-tyoe{
+font-size: 3rem;
+color: var(--color-card);
+}
+.description--pokemon-paragraph{
+margin-block: 1rem;
+line-height: 1.4rem;
+}
+.description--pokemon-proyect{
+align-self: flex-end;
+font-size: .7rem;
+line-height: 1rem;
+margin-inline-start: 6rem;
+width: 240px;
+}
+.description--pokemon-reserved{
+  align-self: flex-end;
+  color: #464242;
+  font-size: .8rem;
+  }
+.pokeRank-description{
+align-self: flex-end;
+margin-top: 1rem;
+}
+.site-creator{
+align-self: flex-end;
+font-size: .9rem;
+}
+.pokeRank-title-description{
+font-size: 1.5rem;
+color: var(--color-card);
+}
+
+.pokeRank-num-description{
+font-size: 5rem;
+}
+@keyframes pokerotate{
+20%{
+  transform: translateX(-250px) rotateX(30deg) rotateY(-70deg)  ;
+}
+100%{
+  transform: translateX(0) rotateX(0) rotateY(0);
+}
+}
