@@ -221,6 +221,10 @@ carddescriptor.classList.add("active")
                     // Agregar el evento de clic a la miniatura de Pokémon
                     pokemonThumbnail.addEventListener("click", (e) => {
                        displayPokemonInfo(data)
+                       window.scrollTo({
+                        top: 0,
+                        behavior: "smooth" // Hace que el scroll sea suave
+                      });
                     });
                 });
         }
