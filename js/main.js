@@ -18,7 +18,8 @@ document.addEventListener("DOMContentLoaded", () => {
                 displayPokemonInfo(data);
             })
             .catch(error => {
-                pokedexDiv.innerHTML = "<p>Pokémon no encontrado.</p>";
+                pokedexDiv.innerHTML = "<p class='paragraph'>Pokémon no encontrado.</p>";
+                document.body.style.background = "#1f1c2c"
             });
     }
     
@@ -131,6 +132,7 @@ document.addEventListener("DOMContentLoaded", () => {
         root.style.setProperty('--color-text-rank', color.color2);
         root.style.setProperty('--color-fond', color.color3); 
         console.log(color[1]);
+        document.body.style.background = "linear-gradient(to top, #1f1c2c, var(--color-card))"
         const pokemonInfo = `
             <div class="card-container">
                 <div class="container-decription-pokemon">
@@ -217,6 +219,8 @@ carddescriptor.classList.add("active")
         pokemonThumbnail.classList.add("pokemon-thumbnail");
         pokemonThumbnail.innerHTML = `
             <img src="${data.sprites.other.dream_world.front_default}" alt="${data.name}">
+         
+
         `;
     
         const pokedexDiv = document.getElementById("pokedex"); // Asegúrate de obtener la referencia correcta al contenedor de pokedex

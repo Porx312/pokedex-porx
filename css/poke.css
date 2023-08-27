@@ -53,7 +53,7 @@ input:focus {
   align-items: center;
   justify-content: center;
   border-radius: 10px;
-  padding: 10px;
+  position: relative;
   width: 320px;
   height: 250px;
   background: #292829; 
@@ -67,4 +67,28 @@ transform: scale(1.05);
 .pokemon-thumbnail img{
 max-width: 200px;
 
+}
+
+@media screen and (max-width: 767px) {
+  #pokemonName {
+    padding: 20px 100px;
+    border: 0;
+    height: 60px;
+    border-radius: 0 20px 20px 0;
+  }
+  
+}
+
+@media screen and (max-width: 500px) {
+  #pokemonName {
+    padding: 10px 50px;
+
+    height: 40px;
+
+  }
+  #searchButton {
+    font-size: 1.5rem;
+    height: 40px;
+
+  }
 }

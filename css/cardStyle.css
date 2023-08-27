@@ -10,7 +10,15 @@ padding: 0;
 --color-fond:#222222;
 }
 body{
-  background: linear-gradient(to top, #1f1c2c, var(--color-card))
+background: #03011a;
+}
+.text-pokemon{
+color: white;
+
+}
+  .paragraph{
+  color: white;
+  font-size: 3rem;
   }
 .card-container{ 
  
