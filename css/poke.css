@@ -92,3 +92,17 @@ max-width: 200px;
 
   }
 }
+@media screen and (max-width: 407px) {
+  #pokemonName {
+    padding: 10px 10px;
+
+    height: 40px;
+
+  }
+  #searchButton {
+    font-size: 1.5rem;
+    height: 40px;
+
+  }
+}
+

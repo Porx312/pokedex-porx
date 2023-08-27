@@ -265,3 +265,21 @@ font-size: 5rem;
   transform: translateX(0) rotateX(0) rotateY(0);
 }
 }
+
+@media screen and (max-width: 1000px) {
+.card-container{
+transform: translateY(42px);
+}
+.card{
+order: 1;
+}
+.container-decription-pokemon{
+order: 2;
+}
+}
+
+@media screen and (max-width: 400px) {
+  .card-container{ 
+    transform: translateY(-150px) scale(.7);
+  }
+}
