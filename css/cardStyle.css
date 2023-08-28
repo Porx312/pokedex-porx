@@ -298,3 +298,31 @@ order: 2;
     transform: translateY(-150px) scale(.7);
   }
 }
+
+/* btn-styel */
+
+  .back{
+ 
+ }
+ 
+ .back:hover {
+  box-shadow: var(--hover-shadows);
+ }
+
+ .back-btn{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+border: 0;
+padding: 1rem;
+border-radius: 50%;
+position: fixed;
+right: 30px;
+font-size: 1rem;
+color: white;
+transform: rotateX(360deg);
+bottom: 30px;
+background-color: rgb(49, 49, 49);
+}

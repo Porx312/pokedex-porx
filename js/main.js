@@ -2,16 +2,18 @@ document.addEventListener("DOMContentLoaded", () => {
     const searchButton = document.getElementById("searchButton");
     const pokemonNameInput = document.getElementById("pokemonName");
     const pokedexDiv = document.getElementById("pokedex");
-
     searchButton.addEventListener("click", () => {
         const pokemonName = pokemonNameInput.value.trim().toLowerCase();
         fetchPokemonData(pokemonName);
     });
-    
     pokemonNameInput.addEventListener("keydown", (e) => {
         if (e.keyCode === 13) {
             e.preventDefault(); // Evitar que se envíe el formulario si estás dentro de uno
             searchButton.click(); // Simular un clic en el botón de búsqueda
+        }
+        if (e.keyCode === 8) {
+            e.preventDefault(); // Evitar que se envíe el formulario si estás dentro de uno
+     
         }
     });
 
@@ -21,9 +23,10 @@ document.addEventListener("DOMContentLoaded", () => {
             .then(data => {
                 displayPokemonInfo(data);
             })
+            
             .catch(error => {
-                pokedexDiv.innerHTML = "<p class='paragraph'>Pokémon no encontrado.</p>";
-                document.body.style.background = "#1f1c2c"
+                pokedexDiv.innerHTML  = ""
+                fetchMultiplePokemonData()
             });
     }
     
